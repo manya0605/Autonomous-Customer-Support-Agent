@@ -1,746 +1,296 @@
-Autonomous Customer Support Agent
+# 🤖 Autonomous Customer Support Agent
+
+An AI-powered customer support system that autonomously understands customer requests, routes them to specialized agents, performs secure business actions, retrieves company knowledge using RAG, and escalates complex issues to human support when required.
+
+## 🚀 Features
+
+- 🔐 JWT-based customer authentication
+- 👤 Customer-specific data authorization
+- 🤖 Multi-agent support orchestration
+- 📦 Order status and tracking
+- 💳 Payment information handling
+- 🔄 Return request creation and status tracking
+- ❌ Order cancellation
+- 🎫 Support ticket creation and retrieval
+- 📚 RAG-based company knowledge retrieval
+- 🧠 Intent detection and sentiment analysis
+- 🛠️ Automated troubleshooting
+- 👨‍💼 Human escalation for complex issues
+- 💬 Conversation history
+- 🛡️ Cross-customer data isolation
+- 🧪 Automated security tests
+- ⚙️ GitHub Actions CI
+
+## 🏗️ Architecture
+
+```text
+                         ┌──────────────────┐
+                         │      Customer    │
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                         ┌──────────────────┐
+                         │    Web Frontend  │
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                         ┌──────────────────┐
+                         │   FastAPI API    │
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                         ┌──────────────────┐
+                         │ JWT Authentication│
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                    ┌──────────────────────────┐
+                    │ Support Orchestrator     │
+                    └────────────┬─────────────┘
+                                 │
+             ┌───────────────────┼───────────────────┐
+             │                   │                   │
+             ▼                   ▼                   ▼
+       ┌──────────┐        ┌──────────┐       ┌──────────┐
+       │  Order   │        │ Payment  │       │  Return  │
+       │  Agent   │        │  Agent   │       │  Flow    │
+       └──────────┘        └──────────┘       └──────────┘
+             │                   │                   │
+             └───────────────────┼───────────────────┘
+                                 │
+                    ┌────────────▼─────────────┐
+                    │     Support Tickets      │
+                    └────────────┬─────────────┘
+                                 │
+                    ┌────────────▼─────────────┐
+                    │       SQL Database        │
+                    └──────────────────────────┘
+
+                    ┌──────────────────────────┐
+                    │      Knowledge Base       │
+                    │          + RAG             │
+                    └──────────────────────────┘
+🧠 Agent System
+
+The system uses a central support orchestrator that coordinates specialized components:
+
+Component	Responsibility
+Intent Agent	Identifies the customer's request
+Sentiment Agent	Detects customer sentiment
+Order Agent	Handles order status and tracking
+Payment Agent	Handles payment information
+Return Workflow	Processes return requests
+Cancellation Agent	Handles order cancellation
+Ticket Agent	Creates and retrieves support tickets
+Knowledge Agent	Answers policy and company questions using RAG
+Troubleshooting Agent	Handles technical/problem-solving requests
+Escalation Agent	Determines when human support is required
+Support Orchestrator	Coordinates the complete workflow
+🔐 Security
+
+Security and customer data isolation are core parts of the system.
+
+Authentication
+
+Customers authenticate using JWT access tokens.
+
+The authenticated customer ID is obtained from the JWT rather than trusting a customer ID supplied by the frontend.
+
+Authorization
+
+Business tools verify that the requested resource belongs to the authenticated customer.
 
+Examples:
 
+Customer 1 cannot access Customer 2's orders.
+Customer 1 cannot access Customer 2's payment information.
+Customer 1 cannot create returns for Customer 2's orders.
+Support tickets are filtered by authenticated customer ID.
+Data Isolation
 
-An AI-powered customer support system that autonomously understands customer requests, routes them to specialized agents, uses business tools and knowledge-base retrieval, enforces customer-level authorization, maintains conversation history, and escalates appropriate cases to human support.
+Database queries use the authenticated customer's identity when retrieving customer-specific information.
 
+This prevents cross-customer information leakage.
 
+📚 Retrieval-Augmented Generation
 
-Overview
+The system uses a company knowledge base to answer policy-related questions.
 
+The RAG workflow allows the agent to:
 
+Receive a customer question.
+Identify whether company knowledge is required.
+Search the knowledge base.
+Retrieve relevant information.
+Generate a response using the available documentation.
 
-The Autonomous Customer Support Agent is a full-stack AI customer-support application built with a Python/FastAPI backend and a browser-based frontend.
+The system avoids inventing policy details when information is not present in the available documentation.
 
+🧪 Automated Testing
 
+Security-focused automated tests are included using pytest.
 
-Instead of relying on a single chatbot response, the system uses an orchestration layer that analyzes each customer request and routes it to the appropriate specialized agent.
+Current tests verify:
 
+Customer can access their own order.
+Customer cannot access another customer's order.
+Customer cannot access another customer's payment.
+Customer cannot access another customer's return.
+Customer ticket data remains isolated.
 
+Current result:
 
-The system supports:
+5 passed
+⚙️ Continuous Integration
 
+GitHub Actions automatically runs the test suite when:
 
+Code is pushed to main
+A pull request targets main
 
-\- Customer registration and login
+The CI pipeline:
 
-\- JWT-based authentication
-
-\- Customer-specific data isolation
-
-\- Order status and tracking
-
-\- Order cancellation
-
-\- Return requests
-
-\- Payment status
-
-\- Support ticket creation and retrieval
-
-\- Knowledge-base and RAG-based policy responses
-
-\- Troubleshooting workflows
-
-\- Sentiment analysis
-
-\- Human-support escalation
-
-\- Conversation history
-
-\- Audit logging
-
-
-
-Architecture
-
-
-
-Customer
-
-&#x20;  │
-
-&#x20;  ▼
-
-Frontend
-
-&#x20;  │
-
-&#x20;  ▼
-
-FastAPI API
-
-&#x20;  │
-
-&#x20;  ▼
-
-Support Orchestrator
-
-&#x20;  │
-
-&#x20;  ├── Intent Agent
-
-&#x20;  ├── Sentiment Agent
-
-&#x20;  ├── Escalation Agent
-
-&#x20;  │
-
-&#x20;  ├── Order Agent
-
-&#x20;  ├── Payment Agent
-
-&#x20;  ├── Ticket Agent
-
-&#x20;  ├── Knowledge Agent
-
-&#x20;  └── Troubleshooting Agent
-
-&#x20;          │
-
-&#x20;          ▼
-
-&#x20;       Tools Layer
-
-&#x20;          │
-
-&#x20;          ├── Order Tools
-
-&#x20;          ├── Payment Tools
-
-&#x20;          ├── Return Tools
-
-&#x20;          ├── Refund Tools
-
-&#x20;          ├── Ticket Tools
-
-&#x20;          ├── RAG Tools
-
-&#x20;          ├── Memory Tools
-
-&#x20;          └── Audit Tools
-
-&#x20;                 │
-
-&#x20;                 ▼
-
-&#x20;            Database
-
-
-
-Key Features
-
-
-
-🔐 Authentication and Authorization
-
-
-
-The application uses JWT-based authentication.
-
-
-
-Authenticated customer identity is obtained from the JWT rather than from the chat request body.
-
-
-
-Customer-specific resources are protected so that a customer cannot access another customer's:
-
-
-
-\- Orders
-
-\- Payment information
-
-\- Return information
-
-\- Support tickets
-
-
-
-🤖 Multi-Agent Support
-
-
-
-The system uses specialized agents for different support responsibilities.
-
-
-
-Agent| Responsibility
-
-Intent Agent| Identifies the customer's request
-
-Sentiment Agent| Detects customer sentiment
-
-Escalation Agent| Determines whether human support is required
-
-Order Agent| Handles order status and tracking
-
-Payment Agent| Handles payment-related requests
-
-Ticket Agent| Creates and retrieves support tickets
-
-Knowledge Agent| Answers policy/product/FAQ questions
-
-Troubleshooting Agent| Handles troubleshooting workflows
-
-Support Orchestrator| Coordinates the complete workflow
-
-
-
-📦 Order Support
-
-
-
-Customers can ask about their orders, including:
-
-
-
-\- Order status
-
-\- Order tracking
-
-\- Order cancellation
-
-
-
-The system verifies order ownership before returning order information or performing protected actions.
-
-
-
-↩️ Returns and Refunds
-
-
-
-The system supports return workflows with:
-
-
-
-\- Order ownership validation
-
-\- Return eligibility checks
-
-\- Existing-return detection
-
-\- Duplicate return prevention
-
-\- Return request creation
-
-\- Return status retrieval
-
-
-
-💳 Payment Support
-
-
-
-Customers can retrieve payment information associated with their own orders.
-
-
-
-Payment access is protected using customer ownership validation.
-
-
-
-🎫 Support Tickets
-
-
-
-The system can:
-
-
-
-\- Create support tickets
-
-\- Detect existing open tickets
-
-\- Retrieve a customer's support tickets
-
-\- Associate tickets with the authenticated customer
-
-\- Create tickets during human escalation
-
-
-
-📚 Knowledge Base and RAG
-
-
-
-The application uses a knowledge base containing company policies and product/troubleshooting information.
-
-
-
-Knowledge-related questions are answered using retrieved documentation rather than relying only on generated responses.
-
-
-
-Example knowledge areas include:
-
-
-
-\- Return policy
-
-\- Refund policy
-
-\- Cancellation policy
-
-\- Shipping policy
-
-\- FAQs
-
-\- Product manual
-
-\- Troubleshooting guides
-
-
-
-🧑‍💼 Human Escalation
-
-
-
-The system can identify situations that require human support.
-
-
-
-When escalation is required, the system can create a support ticket containing the customer's request and relevant context.
-
-
-
-💾 Conversation Memory
-
-
-
-Customer conversations are stored and associated with the customer and conversation ID.
-
-
-
-This allows the system to maintain conversation context while keeping customer histories isolated.
-
-
-
-📝 Audit Logging
-
-
-
-Important actions and outcomes are recorded through the audit logging system.
-
-
-
-This provides traceability for operations such as:
-
-
-
-\- Cancellations
-
-\- Returns
-
-\- Support tickets
-
-\- Escalations
-
-\- Authorization-related outcomes
-
-
-
-Technology Stack
-
-
-
+Checks out the repository.
+Sets up Python 3.10.
+Installs project dependencies.
+Runs the automated tests.
+🛠️ Tech Stack
 Backend
-
-
-
-\- Python
-
-\- FastAPI
-
-\- SQLModel
-
-\- SQLite
-
-\- JWT authentication
-
-\- Password hashing
-
-\- RAG / knowledge retrieval
-
-
-
+Python
+FastAPI
+SQLModel
+SQLite
+Pydantic
+JWT
+pwdlib
+AI / RAG
+OpenAI-compatible API
+LangChain
+FAISS
+Sentence Transformers
 Frontend
-
-
-
-\- HTML
-
-\- CSS
-
-\- JavaScript
-
-
-
-AI Architecture
-
-
-
-\- Multi-agent orchestration
-
-\- Intent classification
-
-\- Sentiment analysis
-
-\- Escalation decision logic
-
-\- Tool-based actions
-
-\- Knowledge-base retrieval
-
-\- Conversation memory
-
-
-
-Project Structure
-
-
-
+HTML
+CSS
+JavaScript
+Testing & DevOps
+pytest
+Git
+GitHub
+GitHub Actions
+📁 Project Structure
 Autonomous-Customer-Support-Agent/
-
 │
-
 ├── backend/
-
 │   └── app/
-
 │       ├── agents/
-
 │       ├── core/
-
 │       ├── database/
-
 │       ├── models/
-
-│       ├── rag/
-
 │       ├── routers/
-
 │       └── tools/
-
 │
-
 ├── frontend/
-
 │   ├── index.html
-
 │   ├── style.css
-
 │   └── app.js
-
 │
-
-├── knowledge\_base/
-
-│   ├── cancellation\_policy.txt
-
-│   ├── faq.txt
-
-│   ├── product\_manual.txt
-
-│   ├── refund\_policy.txt
-
-│   ├── return\_policy.txt
-
-│   ├── shipping\_policy.txt
-
-│   └── troubleshooting\_\*.txt
-
+├── knowledge_base/
 │
-
 ├── tests/
-
-├── data/
-
-├── vector\_store/
-
+│   └── test_security.py
+│
+├── vector_store/
+│
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+│
+├── .env.example
 ├── .gitignore
-
+├── requirements.txt
 └── README.md
-
-
-
-Running the Project
-
-
-
-1\. Clone the repository
-
-
-
+🚦 Running the Project Locally
+1. Clone the repository
 git clone https://github.com/manya0605/Autonomous-Customer-Support-Agent.git
-
 cd Autonomous-Customer-Support-Agent
-
-
-
-2\. Create and activate a virtual environment
-
-
+2. Create a virtual environment
+python -m venv venv
+3. Activate the environment
 
 Windows PowerShell:
 
-
-
-python -m venv venv
-
-.\\venv\\Scripts\\Activate.ps1
-
-
-### Environment Variables
-
-Create a local .env file from the provided template:
-
-```powershell
-copy .env.example .env
-
-
-
-3\. Install dependencies
-
-
-
+.\venv\Scripts\Activate.ps1
+4. Install dependencies
 pip install -r requirements.txt
+5. Configure environment variables
 
+Create a .env file in the project root.
 
+Use .env.example as a reference:
 
-If the project uses a different dependency file in your environment, follow that file instead.
+OPENROUTER_API_KEY=
+JWT_SECRET_KEY=
 
+Add your own local values.
 
+Never commit .env or API keys to GitHub.
 
-4\. Configure environment variables
-
-
-
-Create a ".env" file in the project root and configure the required environment variables.
-
-
-
-Do not commit ".env" to GitHub.
-
-
-
-5\. Start the backend
-
-
+6. Start the backend
 
 From the project root:
 
-
-
 uvicorn backend.app.main:app --reload
 
+The API will be available through the FastAPI server.
 
-
-The API will be available at:
-
-
-
-http://127.0.0.1:8000
-
-
-
-Swagger API documentation:
-
-
-
-http://127.0.0.1:8000/docs
-
-
-
-6\. Start the frontend
-
-
+7. Start the frontend
 
 Open another PowerShell window:
 
-
-
 cd frontend
-
 python -m http.server 5500
-
-
 
 Then open:
 
-
-
 http://127.0.0.1:5500
+🧪 Running Tests
 
+Run:
 
+.\venv\Scripts\python.exe -m pytest tests -v
 
-Security
+Expected result:
 
+5 passed
+🔑 API Authentication
 
+Protected API endpoints require a JWT bearer token.
 
-The project includes several security controls:
+Example:
 
+Authorization: Bearer <access_token>
 
+The server validates the token and derives the authenticated customer identity from it.
 
-\- JWT authentication
+🎯 Project Goals
 
-\- Password hashing
+This project demonstrates how autonomous AI agents can be combined with traditional backend systems to build a secure customer support platform.
 
-\- Authenticated customer identity
+The main focus areas are:
 
-\- Customer-level resource ownership checks
+Autonomous task routing
+Tool-based agent execution
+Retrieval-augmented generation
+Secure API design
+Customer data isolation
+Automated business workflows
+Human escalation
+Automated testing
+Continuous integration
 
-\- Protected agent API
-
-\- CORS configuration
-
-\- Environment-variable based secret configuration
-
-\- Exclusion of secrets and local database files through ".gitignore"
-
-
-
-Tested Workflows
-
-
-
-The following workflows have been tested through the application:
-
-
-
-\- Customer registration/login
-
-\- Authenticated agent access
-
-\- Unauthorized agent access
-
-\- Own-order status lookup
-
-\- Cross-customer order protection
-
-\- Return creation
-
-\- Duplicate return prevention
-
-\- Cross-customer return protection
-
-\- Payment status lookup
-
-\- Cross-customer payment protection
-
-\- Support ticket creation
-
-\- Customer-isolated ticket retrieval
-
-\- Knowledge-base/RAG responses
-
-\- General conversation
-
-\- Human-support escalation
-
-
-
-Example Requests
-
-
-
-What is the status of order 1?
-
-
-
-I want to return order 1
-
-
-
-What is the payment status of order 1?
-
-
-
-Show me my support tickets
-
-
-
-What is your return policy?
-
-
-
-I want to speak to a human support representative
-
-
-
-Project Goals
-
-
-
-The goal of this project is to demonstrate how an autonomous AI customer-support system can combine:
-
-
-
-\- AI reasoning
-
-\- Multi-agent orchestration
-
-\- Tool execution
-
-\- Retrieval-augmented knowledge
-
-\- Authentication
-
-\- Authorization
-
-\- Persistent conversation memory
-
-\- Business workflows
-
-\- Human escalation
-
-\- Auditability
-
-
-
-into a single end-to-end customer-support application.
-
-
-
-Future Improvements
-
-
-
-Potential future improvements include:
-
-
-
-\- Production-grade database deployment
-
-\- More comprehensive automated tests
-
-\- Improved observability and monitoring
-
-\- Background job processing
-
-\- Role-based support-agent access
-
-\- Production deployment
-
-\- More advanced retrieval and evaluation
-
-\- Automated CI/CD
-
-\- Additional customer-support workflows
-
-
-
-Author
-
-
+👨‍💻 Author
 
 Manya M V
 
-
-
 GitHub:
-
-https://github.com/manya0605/Autonomous-Customer-Support-Agent
-
+https://github.com/manya0605
