@@ -1,0 +1,46 @@
+CANCELLATION POLICY
+
+Policy Version: 1.0
+
+1. GENERAL CANCELLATION POLICY
+
+Customers may request cancellation of an order before it reaches a stage where cancellation is no longer possible.
+
+Cancellation availability depends on the current order status.
+
+2. CANCELLATION ELIGIBILITY
+
+Cancellation may be possible when:
+
+- The order is pending.
+- The order has not entered shipment processing.
+- The company has not completed fulfillment.
+
+Cancellation may not be possible when:
+
+- The order has already been shipped.
+- The order has already been delivered.
+- The order is already being processed for fulfillment.
+
+3. PAYMENT AND CANCELLATION
+
+If an order is successfully cancelled after payment:
+
+- The payment record should be checked.
+- A refund may be initiated according to the refund policy.
+- The customer should receive confirmation.
+
+4. IMPORTANT AGENT RULE
+
+The AI agent must check the current order status before claiming that an order can be cancelled.
+
+The agent must never claim that a cancellation or refund has been completed unless the corresponding action has actually succeeded.
+
+5. HUMAN ESCALATION
+
+Cancellation requests should be escalated when:
+
+- The order state is unclear.
+- The system cannot determine eligibility.
+- The customer disputes the cancellation result.
+- A payment-related problem occurs.

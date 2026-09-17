@@ -1,0 +1,48 @@
+LAPTOP TROUBLESHOOTING GUIDE
+
+DEVICE: Laptop
+CATEGORY: Performance
+
+SYMPTOM: Laptop is very slow
+
+COMMON CAUSES:
+- Too many background applications
+- Insufficient available memory
+- Low disk space
+- Startup applications
+- Malware or unwanted software
+- Overheating
+- Outdated drivers
+
+DIAGNOSTIC STEPS:
+
+STEP 1:
+Restart the laptop and check whether performance improves.
+
+STEP 2:
+Close unnecessary applications running in the background.
+
+STEP 3:
+Check available storage space.
+Free storage if the system drive is almost full.
+
+STEP 4:
+Check startup applications and disable unnecessary programs.
+
+STEP 5:
+Check whether the laptop is overheating.
+Ensure that air vents are not blocked.
+
+STEP 6:
+Install available operating system and driver updates.
+
+STEP 7:
+Run a trusted security scan if suspicious software is suspected.
+
+ESCALATION:
+Escalate to human technical support when:
+- Performance remains poor after troubleshooting.
+- The laptop repeatedly shuts down.
+- The device overheats significantly.
+- Hardware failure is suspected.
+- The customer cannot perform the recommended steps.

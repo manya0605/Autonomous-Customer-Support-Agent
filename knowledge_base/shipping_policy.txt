@@ -1,0 +1,49 @@
+SHIPPING POLICY
+
+Policy Version: 1.0
+
+1. GENERAL SHIPPING POLICY
+
+Orders are processed and shipped according to product availability, destination, and selected delivery service.
+
+Estimated delivery times are estimates and may change because of operational or external factors.
+
+2. SHIPPING DELAYS
+
+An order may be delayed because of:
+
+- High shipping volume
+- Weather conditions
+- Transportation problems
+- Incorrect or incomplete address
+- Regional delivery restrictions
+- Warehouse processing delays
+- Unexpected logistics issues
+
+3. DELAYED ORDERS
+
+When an order is delayed, the support agent should:
+
+1. Verify the order ID.
+2. Check the current order status.
+3. Inform the customer of the available status.
+4. Avoid promising an exact delivery date unless confirmed by the system.
+
+4. CUSTOMER COMMUNICATION
+
+The agent should acknowledge customer frustration when an order is delayed.
+
+The agent should provide only information available from trusted system data.
+
+5. ESCALATION
+
+A delayed order should be escalated when:
+
+- The customer reports a serious delivery issue.
+- The order remains unresolved for an extended period.
+- The customer requests human assistance.
+- The system cannot determine the delivery status.
+
+6. IMPORTANT AGENT RULE
+
+The AI agent must never invent a tracking update or delivery date.

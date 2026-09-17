@@ -1,0 +1,54 @@
+ROUTER TROUBLESHOOTING GUIDE
+
+DEVICE: Router
+CATEGORY: Network Connectivity
+
+SYMPTOM: Router keeps disconnecting
+
+COMMON CAUSES:
+- Router overheating
+- Loose or damaged network cable
+- ISP connection instability
+- Outdated router firmware
+- Weak Wi-Fi signal
+- Too many connected devices
+- Router configuration problems
+
+DIAGNOSTIC STEPS:
+
+STEP 1:
+Restart the router.
+Turn off the router, wait approximately 30 seconds, and turn it back on.
+Wait until the Internet/WAN indicator becomes stable.
+
+STEP 2:
+Check the cables.
+Make sure the power cable and Internet/WAN cable are firmly connected.
+
+STEP 3:
+Check whether the problem affects all devices.
+If only one device disconnects, the problem may be related to that device rather than the router.
+
+STEP 4:
+Check router temperature.
+Make sure the router is placed in a ventilated location and is not overheating.
+
+STEP 5:
+Reduce connected devices.
+Temporarily disconnect unnecessary devices and test the connection again.
+
+STEP 6:
+Check Internet/WAN status.
+If the router shows an Internet/WAN error, the problem may be related to the Internet Service Provider.
+
+STEP 7:
+Check firmware.
+If the problem continues, check whether a firmware update is available for the router.
+
+ESCALATION:
+Escalate to human technical support when:
+- The router repeatedly disconnects after troubleshooting.
+- The WAN/Internet connection remains unavailable.
+- The router shows hardware failure.
+- The customer cannot access router configuration.
+- The customer reports a safety or electrical issue.

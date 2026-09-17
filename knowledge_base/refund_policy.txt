@@ -1,0 +1,45 @@
+REFUND POLICY
+
+Policy Version: 1.0
+
+1. GENERAL REFUND POLICY
+
+Customers may be eligible for a refund when an order qualifies under the company's return, cancellation, or service-failure policies.
+
+Refund decisions must be based on the applicable order status, payment status, return status, and company policy.
+
+2. ELIGIBLE REFUND CASES
+
+A customer may be eligible for a refund when:
+
+- The order was cancelled before shipment.
+- The customer successfully returned an eligible product.
+- The product was defective or damaged on arrival.
+- The customer received the wrong product.
+- The company confirms a significant delivery failure.
+- A payment was successfully processed but the order was cancelled by the company.
+
+3. NON-ELIGIBLE CASES
+
+A refund may be denied when:
+
+- The product is outside the applicable return period.
+- The product is damaged due to customer misuse.
+- The customer cannot provide sufficient order information.
+- The product belongs to a non-refundable category.
+- The payment was never successfully processed.
+
+4. REFUND PROCESS
+
+Once a refund is approved:
+
+- The refund request is recorded.
+- The original payment method is used whenever possible.
+- The customer receives confirmation of the refund request.
+- The final refund processing time depends on the payment provider.
+
+5. IMPORTANT AGENT RULE
+
+The AI support agent must never guarantee a refund unless the order and applicable policy confirm eligibility.
+
+If eligibility cannot be determined automatically, the agent must escalate the request to a human support representative.

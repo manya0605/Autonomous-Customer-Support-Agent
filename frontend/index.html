@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customer Support AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         LOGIN / REGISTER SCREEN
+    ================================================== -->
+
+    <div class="auth-container" id="authContainer">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                AI
+            </div>
+
+            <h1>Support AI</h1>
+
+            <p class="auth-subtitle">
+                Autonomous Customer Support
+            </p>
+
+
+            <!-- LOGIN -->
+
+            <div id="loginForm">
+
+                <h2>Welcome back</h2>
+
+                <p class="form-description">
+                    Sign in to access your support assistant.
+                </p>
+
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                >
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                >
+
+
+                <button
+                    class="auth-button"
+                    id="loginButton"
+                    type="button"
+                >
+                    Sign In
+                </button>
+
+
+                <div
+                    class="auth-message"
+                    id="loginMessage"
+                ></div>
+
+
+                <p class="switch-auth">
+
+                    Don't have an account?
+
+                    <button
+                        type="button"
+                        id="showRegisterButton"
+                    >
+                        Create account
+                    </button>
+
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                id="registerForm"
+                style="display: none;"
+            >
+
+                <h2>Create account</h2>
+
+                <p class="form-description">
+                    Create your customer support account.
+                </p>
+
+
+                <label for="registerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                >
+
+
+                <label for="registerEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                >
+
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                >
+
+
+                <label for="registerPhone">
+                    Phone
+                </label>
+
+                <input
+                    type="text"
+                    id="registerPhone"
+                    placeholder="Optional"
+                >
+
+
+                <button
+                    class="auth-button"
+                    id="registerButton"
+                    type="button"
+                >
+                    Create Account
+                </button>
+
+
+                <div
+                    class="auth-message"
+                    id="registerMessage"
+                ></div>
+
+
+                <p class="switch-auth">
+
+                    Already have an account?
+
+                    <button
+                        type="button"
+                        id="showLoginButton"
+                    >
+                        Sign in
+                    </button>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         CUSTOMER DASHBOARD
+    ================================================== -->
+
+    <div
+        class="dashboard"
+        id="dashboard"
+        style="display: none;"
+    >
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>
+                        Support AI
+                    </h2>
+
+                    <span>
+                        Customer Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-item active"
+                    type="button"
+                >
+
+                    <span>💬</span>
+
+                    Support Chat
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                >
+
+                    <span>📦</span>
+
+                    My Orders
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                >
+
+                    <span>👤</span>
+
+                    Profile
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                    type="button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Customer Support
+                    </h1>
+
+                    <p>
+                        How can we help you today?
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <div class="user-avatar" id="userAvatar">
+                        C
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            Customer
+                        </strong>
+
+                        <span>
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- CHAT -->
+
+            <section class="chat-section">
+
+
+                <div class="chat-header">
+
+                    <div class="agent-avatar">
+                        AI
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Support Assistant
+                        </h2>
+
+                        <span class="online-status">
+                            ● Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGES -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+                    <div class="message assistant-message">
+
+                        <div class="message-avatar">
+                            AI
+                        </div>
+
+                        <div class="message-content">
+
+                            <div class="message-name">
+                                Support AI
+                            </div>
+
+                            <div class="message-bubble">
+
+                                Hello! 👋 I'm your AI support assistant.
+                                How can I help you today?
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INPUT -->
+
+                <div class="chat-input-area">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type your message..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        id="sendButton"
+                        type="button"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

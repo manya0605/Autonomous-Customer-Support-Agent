@@ -1,0 +1,118 @@
+PRODUCT MANUAL
+
+1. GENERAL PRODUCT INFORMATION
+
+This product manual contains general setup, usage, maintenance, and troubleshooting information for supported company products.
+
+Customers should follow the instructions applicable to their specific product model.
+
+2. PRODUCT SETUP
+
+Before using a product:
+
+- Remove the product from its packaging.
+- Check that all required accessories are included.
+- Read the safety instructions.
+- Connect the product according to the manufacturer's instructions.
+- Complete the initial setup procedure.
+- Test the product before normal use.
+
+3. CONNECTIVITY
+
+For products that support Wi-Fi or Bluetooth:
+
+- Enable the required connectivity feature.
+- Put the product into pairing or setup mode.
+- Open the connectivity settings on the customer device.
+- Select the product from the available devices.
+- Complete the pairing or setup process.
+
+If the product does not appear:
+
+- Restart the product.
+- Restart Bluetooth or Wi-Fi on the customer device.
+- Move the devices closer together.
+- Remove an old pairing and try again.
+- Check whether the product supports the customer's device.
+
+4. PRODUCT NOT WORKING
+
+If a product does not work:
+
+STEP 1:
+Check that the product is powered on.
+
+STEP 2:
+Check the power cable, charger, battery, or other required connection.
+
+STEP 3:
+Restart the product.
+
+STEP 4:
+Check whether the product displays an error indicator or message.
+
+STEP 5:
+Check the relevant troubleshooting section of this manual.
+
+STEP 6:
+If available, check for official firmware or software updates.
+
+5. PRODUCT PERFORMANCE PROBLEMS
+
+If product performance is poor:
+
+- Restart the product.
+- Check available power or battery level.
+- Check network or connectivity status when applicable.
+- Close unnecessary connected applications.
+- Check whether the problem occurs consistently.
+- Check the product's official troubleshooting instructions.
+
+6. MAINTENANCE
+
+Customers should:
+
+- Keep the product clean.
+- Keep ventilation openings unobstructed.
+- Use compatible accessories.
+- Store the product according to the manufacturer's instructions.
+- Avoid exposure to liquids unless the product is specifically designed for it.
+- Follow the recommended maintenance schedule.
+
+7. SAFETY
+
+Customers should not:
+
+- Open electrical equipment unless authorized and qualified.
+- Modify internal hardware.
+- Use damaged power cables.
+- Use incompatible chargers or accessories.
+- Continue using a product that shows signs of serious electrical or physical damage.
+
+Safety-related problems should be escalated to qualified human support.
+
+8. WARRANTY
+
+Warranty eligibility depends on the applicable product warranty and company policy.
+
+The support agent must verify the applicable warranty information before promising a repair, replacement, or refund.
+
+9. TROUBLESHOOTING ESCALATION
+
+Escalate to human technical support when:
+
+- Standard troubleshooting does not resolve the problem.
+- Hardware damage is suspected.
+- The product repeatedly fails.
+- The customer reports a safety issue.
+- The required procedure is unavailable.
+- The system cannot determine the correct troubleshooting procedure.
+- The customer explicitly requests human assistance.
+
+10. IMPORTANT AGENT RULE
+
+The AI support agent must not invent product specifications, compatibility information, warranty terms, or technical procedures.
+
+When product-specific information is required, the agent should retrieve the relevant product documentation from the company knowledge base.
+
+If reliable information cannot be retrieved, the issue should be escalated to human support.

@@ -1,0 +1,56 @@
+RETURN POLICY
+
+Policy Version: 1.0
+
+1. GENERAL RETURN POLICY
+
+Customers may request a return for eligible products within the applicable return period.
+
+The product must generally be unused and in acceptable condition unless the return is due to a defect, damage, or incorrect product.
+
+2. RETURN ELIGIBILITY
+
+A return may be accepted when:
+
+- The product is defective.
+- The product arrived damaged.
+- The wrong product was delivered.
+- The product does not meet the applicable return conditions.
+- The customer submits the request within the allowed return period.
+
+3. RETURN CONDITIONS
+
+Depending on the product category:
+
+- The product may need to be unused.
+- Original packaging may be required.
+- Accessories and included items should be returned.
+- Proof of purchase or order information may be required.
+
+4. RETURN REQUEST
+
+A customer can request a return by providing:
+
+- Order ID
+- Reason for return
+- Relevant product information
+
+The support system should verify the order before processing a return.
+
+5. RETURN STATUS
+
+Possible return statuses include:
+
+- requested
+- approved
+- rejected
+- received
+- processing
+- completed
+- cancelled
+
+6. IMPORTANT AGENT RULE
+
+The AI agent must check the order and return information before telling the customer whether a return already exists.
+
+If the return eligibility cannot be determined automatically, the request should be escalated to human support.

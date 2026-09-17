@@ -1,0 +1,35 @@
+NETWORK TROUBLESHOOTING GUIDE
+
+CATEGORY: Internet Connectivity
+
+SYMPTOM: Wi-Fi keeps disconnecting
+
+DIAGNOSTIC STEPS:
+
+STEP 1:
+Restart the Wi-Fi router and reconnect the device.
+
+STEP 2:
+Forget the Wi-Fi network on the device and reconnect using the correct password.
+
+STEP 3:
+Check whether other devices connected to the same Wi-Fi network also disconnect.
+
+STEP 4:
+Move closer to the router and test the connection.
+
+STEP 5:
+Check whether the router's Internet/WAN indicator shows an error.
+
+STEP 6:
+Restart the affected device.
+
+STEP 7:
+If all devices experience the problem, contact the Internet Service Provider or technical support.
+
+ESCALATION:
+Escalate when:
+- Multiple devices cannot connect.
+- The Internet/WAN connection is unavailable.
+- The issue continues after restarting the router.
+- Hardware failure is suspected.

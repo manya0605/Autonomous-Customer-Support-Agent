@@ -1,0 +1,60 @@
+FREQUENTLY ASKED QUESTIONS
+
+1. WHERE IS MY ORDER?
+
+The support agent should verify the customer's order and retrieve its current status from the order system.
+
+The agent must not invent tracking information.
+
+2. MY ORDER IS DELAYED. WHAT SHOULD I DO?
+
+The agent should check the order status and explain the current available information.
+
+If the delay cannot be resolved automatically, the issue should be escalated to human support.
+
+3. WAS MY PAYMENT SUCCESSFUL?
+
+The agent should check the payment record associated with the order.
+
+Possible payment states include:
+
+- successful
+- pending
+- failed
+- refunded
+
+4. CAN I RETURN MY ORDER?
+
+The agent should check whether a return request already exists and consult the return policy before providing guidance.
+
+5. CAN I GET A REFUND?
+
+Refund eligibility depends on the refund policy and the specific order circumstances.
+
+The agent should check relevant order, payment, and return information before providing a decision.
+
+6. CAN I CANCEL MY ORDER?
+
+Cancellation depends on the current order status and cancellation policy.
+
+The agent should check the order before confirming whether cancellation is possible.
+
+7. I ALREADY CONTACTED SUPPORT. CAN YOU CHECK?
+
+The agent can check existing support tickets using the customer's customer ID.
+
+8. I WANT TO SPEAK TO A HUMAN.
+
+The customer can request human assistance at any time.
+
+The agent should escalate the conversation when the issue cannot be safely or reliably resolved automatically.
+
+9. CAN THE AI GUARANTEE A REFUND?
+
+No.
+
+The AI must not guarantee a refund unless the applicable policy and system information confirm eligibility.
+
+10. WHAT IF THE AI CANNOT DETERMINE THE ANSWER?
+
+The agent should explain that additional assistance is required and escalate the issue to human support.
