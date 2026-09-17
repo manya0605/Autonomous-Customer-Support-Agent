@@ -32,6 +32,7 @@ def get_customer_tickets(customer_id: int) -> dict:
             "tickets": [
                 {
                     "ticket_id": ticket.id,
+                    "customer_id": ticket.customer_id,
                     "subject": ticket.subject,
                     "description": ticket.description,
                     "category": ticket.category,
