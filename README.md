@@ -86,6 +86,7 @@ Knowledge Agent	Answers policy and company questions using RAG
 Troubleshooting Agent	Handles technical/problem-solving requests
 Escalation Agent	Determines when human support is required
 Support Orchestrator	Coordinates the complete workflow
+
 🔐 Security
 
 Security and customer data isolation are core parts of the system.
@@ -139,8 +140,8 @@ Customer cannot access another customer's return.
 Customer ticket data remains isolated.
 
 Current result:
-
 5 passed
+
 ⚙️ Continuous Integration
 
 GitHub Actions automatically runs the test suite when:
@@ -177,7 +178,9 @@ pytest
 Git
 GitHub
 GitHub Actions
+
 📁 Project Structure
+
 Autonomous-Customer-Support-Agent/
 │
 ├── backend/
@@ -209,25 +212,26 @@ Autonomous-Customer-Support-Agent/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+
 🚦 Running the Project Locally
+
 1. Clone the repository
 git clone https://github.com/manya0605/Autonomous-Customer-Support-Agent.git
 cd Autonomous-Customer-Support-Agent
+
 2. Create a virtual environment
 python -m venv venv
+
 3. Activate the environment
-
 Windows PowerShell:
-
 .\venv\Scripts\Activate.ps1
+
 4. Install dependencies
 pip install -r requirements.txt
+
 5. Configure environment variables
-
 Create a .env file in the project root.
-
 Use .env.example as a reference:
-
 OPENROUTER_API_KEY=
 JWT_SECRET_KEY=
 
@@ -254,14 +258,11 @@ Then open:
 
 http://127.0.0.1:5500
 🧪 Running Tests
-
 Run:
-
 .\venv\Scripts\python.exe -m pytest tests -v
-
 Expected result:
-
 5 passed
+
 🔑 API Authentication
 
 Protected API endpoints require a JWT bearer token.
