@@ -232,32 +232,25 @@ pip install -r requirements.txt
 5. Configure environment variables
 Create a .env file in the project root.
 Use .env.example as a reference:
-OPENROUTER_API_KEY=
-JWT_SECRET_KEY=
-
+OPENROUTER_API_KEY=paste your key here
+JWT_SECRET_KEY=paste your key here
 Add your own local values.
-
 Never commit .env or API keys to GitHub.
 
 6. Start the backend
-
 From the project root:
-
 uvicorn backend.app.main:app --reload
-
 The API will be available through the FastAPI server.
 
 7. Start the frontend
-
 Open another PowerShell window:
-
 cd frontend
 python -m http.server 5500
-
 Then open:
-
 http://127.0.0.1:5500
+
 🧪 Running Tests
+
 Run:
 .\venv\Scripts\python.exe -m pytest tests -v
 Expected result:
@@ -266,12 +259,15 @@ Expected result:
 🔑 API Authentication
 
 Protected API endpoints require a JWT bearer token.
-
 Example:
-
 Authorization: Bearer <access_token>
-
 The server validates the token and derives the authenticated customer identity from it.
+
+## 📸 Project Overview
+
+![Project Overview](screenshots/project-overview.png)
+## 🏗️ System Architecture
+![System Architecture](screenshots/architecture.png)
 
 🎯 Project Goals
 
