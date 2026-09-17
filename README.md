@@ -493,6 +493,14 @@ python -m venv venv
 .\\venv\\Scripts\\Activate.ps1
 
 
+### Environment Variables
+
+Create a local .env file from the provided template:
+
+```powershell
+copy .env.example .env
+
+
 
 3\. Install dependencies
 
